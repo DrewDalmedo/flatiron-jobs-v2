@@ -1,13 +1,23 @@
+// standard 'create-react-app' imports
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// redux imports
+import Provider from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+// import reducers below
+
+// import other components / containers here
+
+const store = createStore(/* reducer here, applyMiddleware(thunk) */)
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
