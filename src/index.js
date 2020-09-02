@@ -7,14 +7,15 @@ import * as serviceWorker from './serviceWorker';
 
 // redux imports
 import Provider from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 // import reducers below
 import jobsReducer from './reducers/jobsReducer'
 
 // import other components / containers here
 
-const store = createStore(jobsReducer, applyMiddleware(thunk))
+const rootReducer = combineReducers({jobs: jobsReducer})
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
