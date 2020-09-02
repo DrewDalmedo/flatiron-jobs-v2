@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { fetchJobs } from '../actions/fetchJobs'
 
+import JobSearchInput from '../components/jobs/JobSearchInput'
+
 class JobsContainer extends React.Component {
 
   render() {
@@ -13,9 +15,8 @@ class JobsContainer extends React.Component {
           Navbar Here
         </div>
 
-        <div>
-          Search here
-        </div>
+        {/* search component */}
+        <JobSearchInput />
 
         <div>
           List here
