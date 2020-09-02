@@ -10,11 +10,11 @@ import Provider from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 // import reducers below
-import manageJobs from './reducers/manageJobs'
+import jobsReducer from './reducers/jobsReducer'
 
 // import other components / containers here
 
-const store = createStore(manageJobs, applyMiddleware(thunk))
+const store = createStore(jobsReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>

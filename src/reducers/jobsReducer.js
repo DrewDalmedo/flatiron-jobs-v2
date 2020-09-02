@@ -1,4 +1,4 @@
-export default function manageJobs(
+export default function jobsReducer(
   state = {
     jobs: []
   },
