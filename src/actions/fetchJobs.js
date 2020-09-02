@@ -1,7 +1,7 @@
-export function fetchJobs(url) {
+export function fetchJobs() {
   return (dispatch) => {
     dispatch({type: 'START_ADDING_JOBS_REQUEST'});
-    fetch(url)
+    fetch('https://jobs.github.com/positions.json')
       .then(response => response.json())
       .then(jobs => dispatch({ type: 'ADD_JOBS', jobs }))
   }
