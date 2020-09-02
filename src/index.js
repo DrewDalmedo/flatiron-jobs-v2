@@ -5,22 +5,30 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// react router imports
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 // redux imports
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
-// import reducers below
+// reducers 
 import jobsReducer from './reducers/jobsReducer'
 
-// import other components / containers here
+// components / containers 
+import Home from './components/Home'
+
+
 
 const rootReducer = combineReducers({jobs: jobsReducer})
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Router>
+    <Provider store={store}>
+      <Route path="/" component={Home} />
+    </Provider>
+  </Router>,
   document.getElementById('root')
 );
 
