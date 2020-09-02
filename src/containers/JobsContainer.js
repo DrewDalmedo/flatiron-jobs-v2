@@ -4,10 +4,24 @@ import { connect } from 'react-redux'
 import { fetchJobs } from '../actions/fetchJobs'
 
 import JobSearchInput from '../components/jobs/JobSearchInput'
+import Job from '../components/jobs/Job'
 
 class JobsContainer extends React.Component {
 
+  componentDidMount() {
+    this.props.getJobs()
+  }
+
+  renderAllJobs = () => {
+    //console.log(this.props)
+    return this.props.jobs.map( job => {
+      return <li> <Job /> </li>
+    })
+  }
+
   render() {
+
+
     return (
       <div>
         <div>
@@ -19,7 +33,9 @@ class JobsContainer extends React.Component {
         <JobSearchInput />
 
         <div>
-          List here
+          <ul>
+            { }
+          </ul>
         </div>
       </div>
     )
@@ -34,7 +50,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getJobs: (url) => dispatch(fetchJobs(url))
+    getJobs: () => dispatch(fetchJobs())
   }
 }
 
