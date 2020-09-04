@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## dependencies
+- foreman
+
+## how to run
+`rails start` in root directory
