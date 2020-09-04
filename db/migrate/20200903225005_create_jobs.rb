@@ -1,7 +1,7 @@
 class CreateJobs < ActiveRecord::Migration[5.2]
   def change
     create_table :jobs, id: :uuid do |t|
-      t.string :type
+      t.string :job_type
       t.string :company
       t.string :company_url
       t.string :location
@@ -9,7 +9,7 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.text :description
       t.text :how_to_apply
 
-      t.datetime :created_at
+      t.timestamps
     end
   end
 end
