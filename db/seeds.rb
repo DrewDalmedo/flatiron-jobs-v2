@@ -9,7 +9,6 @@
 # jobs
 job_one = Job.new()
 
-job_one.id = SecureRandom.uuid
 job_one.job_type = "Full Time"
 job_one.company = "Sticker Mule"
 job_one.company_url = "https://www.stickermule.com/careers"
