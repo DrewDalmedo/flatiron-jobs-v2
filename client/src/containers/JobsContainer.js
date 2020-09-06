@@ -22,11 +22,6 @@ class JobsContainer extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          {/* add a navbar using react-bootstrap! */}
-          Navbar Here
-        </div>
-
         {/* search component */}
         <JobSearchInput />
 
