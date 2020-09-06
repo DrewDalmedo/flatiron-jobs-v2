@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 
 import { fetchJobs } from '../actions/fetchJobs'
 
-import JobSearchInput from '../components/jobs/JobSearchInput'
-import Job from '../components/jobs/Job'
+import JobSearchInput from '../components/Jobs/JobSearchInput'
+import Job from '../components/Jobs/Job'
 
 class JobsContainer extends React.Component {
 

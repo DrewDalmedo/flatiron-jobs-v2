@@ -16,7 +16,7 @@ import thunk from 'redux-thunk'
 import jobsReducer from './reducers/jobsReducer'
 
 // components / containers 
-import Home from './components/Home'
+import Home from './components/Home/Home'
 import JobsContainer from './containers/JobsContainer'
 
 

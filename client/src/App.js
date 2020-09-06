@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 // component / container imports
-import Home from './components/Home'
+import Home from './components/Home/Home'
 
 function App() {
   return (
