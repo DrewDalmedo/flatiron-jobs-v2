@@ -15,13 +15,11 @@ class JobsContainer extends React.Component {
   renderAllJobs = () => {
     //console.log(this.props)
     return this.props.jobs.map( job => {
-      return <li> <Job /> </li>
-    })
+      return <li ><Job /></li>
+    });
   }
 
   render() {
-
-
     return (
       <div>
         <div>
@@ -34,7 +32,7 @@ class JobsContainer extends React.Component {
 
         <div>
           <ul>
-            { }
+            { this.renderAllJobs() }
           </ul>
         </div>
       </div>
@@ -44,7 +42,7 @@ class JobsContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    jobs: state.jobs
+    jobs: state.job.jobs,
   }
 }
 
