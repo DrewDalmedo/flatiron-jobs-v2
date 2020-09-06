@@ -18,3 +18,11 @@ job_one.description = "Test Description"
 job_one.how_to_apply = "Apply here: imtotallyavalidlink.yes"
 
 job_one.save()
+
+# users
+user_one = User.new()
+
+user_one.username = "Test User"
+user_one.password = "Test Password"
+
+user_one.save()
