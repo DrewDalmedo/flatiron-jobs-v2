@@ -18,6 +18,9 @@ const Job = props => {
       <div className="how-to-apply">
         {props.details.how_to_apply}
       </div>
+      <div>
+        <button onClick={() => console.log("click")}>Save Listing</button>
+      </div>
     </div>
   )
 }
