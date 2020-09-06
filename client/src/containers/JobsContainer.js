@@ -15,7 +15,7 @@ class JobsContainer extends React.Component {
   renderAllJobs = () => {
     //console.log(this.props)
     return this.props.jobs.map( job => {
-      return <li ><Job /></li>
+      return <li key={job.id}><Job details={job}/></li>
     });
   }
 
@@ -30,7 +30,7 @@ class JobsContainer extends React.Component {
         {/* search component */}
         <JobSearchInput />
 
-        <div>
+        <div className="jobs-container">
           <ul>
             { this.renderAllJobs() }
           </ul>

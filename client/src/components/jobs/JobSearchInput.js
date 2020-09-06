@@ -7,7 +7,7 @@ class JobSearchInput extends Component {
 
   render() {
     return (
-      <div>
+      <div className="job-filter">
 
         <select>
           <option>Latest Postings</option>
