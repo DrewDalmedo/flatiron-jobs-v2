@@ -14,6 +14,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 // reducers 
 import jobsReducer from './reducers/jobsReducer'
+import userReducer from './reducers/userReducer'
 
 // components / containers 
 import Home from './components/Home/Home'
@@ -21,7 +22,7 @@ import JobsContainer from './containers/JobsContainer'
 import Navigation from './components/Navbar/Navbar'
 
 
-const rootReducer = combineReducers({job: jobsReducer})
+const rootReducer = combineReducers({job: jobsReducer, user: userReducer})
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
