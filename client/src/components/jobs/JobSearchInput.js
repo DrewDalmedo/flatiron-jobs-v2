@@ -8,7 +8,19 @@ class JobSearchInput extends Component {
   render() {
     return (
       <div>
-        JobSearchInput Component
+
+        <select>
+          <option>Latest Postings</option>
+          <option>Earliest Postings</option>
+          <option>Most Applicants</option>
+        </select>
+
+        <select>
+          <option>Full Time</option>
+          <option>Part Time</option>
+          <option>Contract</option>
+        </select>
+
       </div>
     )
   }
