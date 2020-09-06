@@ -21,7 +21,7 @@ import JobsContainer from './containers/JobsContainer'
 
 
 
-const rootReducer = combineReducers({jobs: jobsReducer})
+const rootReducer = combineReducers({job: jobsReducer})
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
