@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 
-class JobSearchInput extends Component {
-  state = {
-    // fill me in later when inputs are made
-  }
-
-  render() {
+const JobSearchInput = (props) => {
     return (
       <div className="job-filter">
 
@@ -23,7 +18,6 @@ class JobSearchInput extends Component {
 
       </div>
     )
-  }
 }
 
-export default JobSearchInput
+export default JobSearchInput;
