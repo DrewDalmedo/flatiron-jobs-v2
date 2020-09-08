@@ -19,6 +19,7 @@ import userReducer from './reducers/userReducer'
 // components / containers 
 import Home from './components/Home/Home'
 import JobsContainer from './containers/JobsContainer'
+import ProfileContainer from './containers/ProfileContainer'
 import Navigation from './components/Navbar/Navbar'
 
 
@@ -32,6 +33,7 @@ ReactDOM.render(
         <Navigation />
         <Route exact path="/" component={Home} />
         <Route exact path="/jobs" component={JobsContainer} />
+        <Route exact path="/profile" component={ProfileContainer} />
       </Router>
     </Provider>
   </Router>,
