@@ -19,7 +19,7 @@ const Job = props => {
         {props.details.how_to_apply}
       </div>
       <div>
-        <button onClick={() => console.log("click")}>Save Listing</button>
+        <button onClick={props.onButtonClick}>Save Listing</button>
       </div>
     </div>
   )
