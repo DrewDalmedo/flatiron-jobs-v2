@@ -11,6 +11,7 @@ const JobSearchInput = (props) => {
         </select>
 
         <select>
+          <option>All</option>
           <option>Full Time</option>
           <option>Part Time</option>
           <option>Contract</option>
