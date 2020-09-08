@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { fetchJobs } from '../actions/jobActions'
+import { saveJob } from '../actions/userActions'
 
 import JobSearchInput from '../components/Jobs/JobSearchInput'
 import Job from '../components/Jobs/Job'
@@ -43,7 +44,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getJobs: () => dispatch(fetchJobs())
+    getJobs: () => dispatch(fetchJobs()),
+    saveJob: details => dispatch( saveJob(details) ),
   }
 }
 
