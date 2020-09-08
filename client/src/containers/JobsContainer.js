@@ -14,9 +14,21 @@ class JobsContainer extends React.Component {
   }
 
   renderAllJobs = () => {
-    //console.log(this.props)
     return this.props.jobs.map( job => {
-      return <li key={job.id}><Job details={job}/></li>
+      return (
+        <li key={job.id}>
+          <Job 
+            details={job}
+            onButtonClick={
+              (e) => {
+                e.target.textContent = "Saved!"
+                e.target.disabled = true;
+                this.props.saveJob(job)
+              }
+            }
+          />
+        </li>
+      )
     });
   }
 
