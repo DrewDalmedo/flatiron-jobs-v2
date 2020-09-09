@@ -27,12 +27,24 @@ class ProfileContainer extends React.Component {
     })
   }
 
-  render() {
-    return (
-      <div>
+  checkForSavedJobs = () => {
+    if (this.props.jobs.length === 0) {
+      return <p>You don't have any jobs saved!</p>
+    }
+    else {
+      return (
         <ul>
           { this.renderSavedJobs() }
         </ul>
+      )
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>Saved Job Listings</h3>
+        { this.checkForSavedJobs() }
       </div>
     )
   }
