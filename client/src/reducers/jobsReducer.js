@@ -1,5 +1,6 @@
 const START_ADDING_JOBS_REQUEST = 'START_ADDING_JOBS_REQUEST'
 const FILTER_JOBS_BY_TYPE = 'FILTER_JOBS_BY_TYPE'
+const SORT_JOBS = 'SORT_JOBS'
 const ADD_JOBS = 'ADD_JOBS'
 
 export default function jobsReducer(
@@ -7,6 +8,7 @@ export default function jobsReducer(
     jobs: [],
     filteredJobs: [],
     jobType: "",
+    sortType: "latest",
     requesting: false,
   },
   action
@@ -24,6 +26,12 @@ export default function jobsReducer(
         ...state,
         filteredJobs: action.payload.filteredJobs,
         jobType: action.payload.jobType
+      }
+    case SORT_JOBS:
+      return {
+        ...state,
+        filteredJobs: action.payload.jobs,
+        sortType: action.payload.sortType
       }
     case ADD_JOBS:
       return {
