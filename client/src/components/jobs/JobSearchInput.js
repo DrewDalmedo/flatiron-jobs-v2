@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-
-import { filterJobs } from '../../actions/jobActions'
-
 import { connect } from 'react-redux'
+
+import { filterJobs, sortJobs } from '../../actions/jobActions'
+
 
 class JobSearchInput extends Component {
   render(){
@@ -10,6 +10,10 @@ class JobSearchInput extends Component {
       <div className="job-filter">
 
         <select
+          value={this.props.sortType}
+          onChange={ e => {
+            this.props.sortJobs( this.props.filteredJobs, e.target.value )
+          }}
         >
           <option value="latest">Latest Postings</option>
           <option value="earliest">Earliest Postings</option>
@@ -37,13 +41,16 @@ class JobSearchInput extends Component {
 const mapStateToProps = state => {
   return {
     jobs: state.job.jobs,
+    filteredJobs: state.job.filteredJobs,
     jobType: state.job.jobType,
+    sortType: state.job.sortType,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    filterJobs: (jobs, jobType) => dispatch( filterJobs(jobs, jobType) )
+    filterJobs: (jobs, jobType) => dispatch( filterJobs(jobs, jobType) ),
+    sortJobs: (jobs, sortType) => dispatch( sortJobs(jobs, sortType) ),
   }
 }
 
