@@ -19,6 +19,7 @@ class JobsContainer extends React.Component {
         <li key={job.id}>
           <Job 
             details={job}
+            buttonText="Save Listing"
             onButtonClick={
               (e) => {
                 e.target.textContent = "Saved!"
