@@ -50,7 +50,7 @@ class JobsContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    jobs: state.job.jobs,
+    jobs: state.job.filteredJobs,
   }
 }
 
