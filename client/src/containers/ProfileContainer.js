@@ -8,7 +8,22 @@ class ProfileContainer extends React.Component {
 
   renderSavedJobs = () => {
     return this.props.jobs.map( job => {
-      return <li key={job.id}>Job Here</li>
+      return (
+        <li key={job.id}>
+          <Job 
+            details={job}
+            buttonText="Delete Listing"
+            onButtonClick={
+              e => {
+                // disable the button to prevent removing it twice
+                e.target.disabled = true;
+
+                this.props.deleteJob(job.id)
+              }
+            }
+          />
+        </li>
+      )
     })
   }
 
@@ -29,4 +44,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(ProfileContainer);
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteJob: (id) => dispatch( deleteJob(id) )
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);
