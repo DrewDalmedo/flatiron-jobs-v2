@@ -18,3 +18,35 @@ export const filterJobs = (jobs, jobType) => {
     })
   }
 }
+
+export const sortJobs = (filteredJobs, sortType) => {
+  return dispatch => {
+    // create a copy of the filteredJobs array
+    const sortedJobs = filteredJobs.slice()
+
+    switch(sortType){
+
+      case 'latest':
+        sortedJobs.sort( (a, b) => {
+          return a.id > b.id ? 1 : -1
+        })
+        // break is here to prevent fall-through to earliest
+        break;
+      case 'earliest':
+        sortedJobs.sort( (a, b) => {
+          return a.id > b.id ? -1 : 1
+        })
+        break;
+      
+    }
+
+
+    dispatch({
+      type: 'SORT_JOBS',
+      payload: {
+        sortType: sortType,
+        jobs: sortedJobs 
+      }
+    })
+  }
+}
