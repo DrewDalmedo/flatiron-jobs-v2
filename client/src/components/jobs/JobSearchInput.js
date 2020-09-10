@@ -17,7 +17,6 @@ class JobSearchInput extends Component {
         >
           <option value="latest">Latest Postings</option>
           <option value="earliest">Earliest Postings</option>
-          <option value="most-applicants">Most Applicants</option>
         </select>
 
         <select
