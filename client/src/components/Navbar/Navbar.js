@@ -21,6 +21,13 @@ const Navigation = () => {
 
         <Nav.Item>
           <Nav.Link>
+            <Link to="/about">About</Link>
+          </Nav.Link>
+        </Nav.Item>
+
+
+        <Nav.Item>
+          <Nav.Link>
             <Link to="/jobs">Jobs</Link>
           </Nav.Link>
         </Nav.Item>
@@ -32,7 +39,15 @@ const Navigation = () => {
           </Nav.Link>
         </Nav.Item>
 
+
+        <Nav.Item>
+          <Nav.Link>
+            <Link to="/contact" >Contact</Link>
+          </Nav.Link>
+        </Nav.Item>
       </Nav>
+
+
     </Navbar> 
   )
 }
