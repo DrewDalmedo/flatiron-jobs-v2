@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.slash {
+  color: #66ccff
+}
+
+.link {
+  color: #3399ff
+}
+
+.banner {
+  text-align: center
+}
+
+.header {
+  background-color: #ffffff;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(36px + 2vmin);
+}
