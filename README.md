@@ -1,30 +1,49 @@
-# README
+# Flatiron Jobs: V2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A job finding web app, built with React and Rails.
 
-Things you may want to cover:
+## About
 
-* Ruby version
+Flatiron Jobs is a web app designed to help developers find their dream job. They can look at job listings and save them to their profile. 
 
-* System dependencies
+The app uses React for the frontend and a Rails API for the backend.
 
-* Configuration
+# Usage
 
-* Database creation
+Currently, the only way to use the web app is to run a local development server.
 
-* Database initialization
+Before you start, you need a few dependencies:
+- Git
+- Ruby
+- Bundler
+- Rails
+- Node.js
 
-* How to run the test suite
+After you've installed all of those, open a terminal and clone the repository:
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+git clone https://github.com/DrewDalmedo/flatiron-jobs-v2
+```
 
-* Deployment instructions
+Next, `cd` into the project's directory and run `bundle install`:
 
-* ...
+```sh
+cd flatiron-jobs-v2 && bundle install
+```
 
-## dependencies
-- foreman
+After that's done, run a database migration and seed the database with test data:
+```sh
+rails db:migrate && rails db:seed
+```
 
-## how to run
-`rails start` in root directory
+Now that the backend is all good to go, `cd` into the `client` directory and install all of the required dependencies for the frontend:
+
+```sh
+cd client && npm install
+```
+
+After that, you're done! `cd` back to the root of the project's directory and run `rails start`
+
+```sh
+cd .. && rails start
+```
