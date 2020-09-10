@@ -21,7 +21,8 @@ import Home from './components/Home/Home'
 import JobsContainer from './containers/JobsContainer'
 import ProfileContainer from './containers/ProfileContainer'
 import Navigation from './components/Navbar/Navbar'
-
+import Contact from './components/Contact/Contact'
+import About from './components/About/About'
 
 const rootReducer = combineReducers({job: jobsReducer, user: userReducer})
 const store = createStore(rootReducer, applyMiddleware(thunk))
@@ -32,8 +33,10 @@ ReactDOM.render(
       <Router>
         <Navigation />
         <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
         <Route exact path="/jobs" component={JobsContainer} />
         <Route exact path="/profile" component={ProfileContainer} />
+        <Route exact path="/contact" component={Contact} />
       </Router>
     </Provider>
   </Router>,
