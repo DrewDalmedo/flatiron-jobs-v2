@@ -9,40 +9,40 @@ import Container from 'react-bootstrap/container';
 const Navigation = () => {
   return (
     <Navbar expand="lg">
-      <Navbar.Brand>// Flatiron Jobs</Navbar.Brand>
+      <Navbar.Brand><strong className="slash">//</strong> Flatiron Jobs</Navbar.Brand>
 
       <Nav className="justify-content-left">
         <Nav.Item>
           <Nav.Link>
-            <Link to="/">Home</Link> 
+            <Link to="/" className="link">Home</Link> 
           </Nav.Link>
         </Nav.Item>
 
 
         <Nav.Item>
           <Nav.Link>
-            <Link to="/about">About</Link>
+            <Link to="/about" className="link">About</Link>
           </Nav.Link>
         </Nav.Item>
 
 
         <Nav.Item>
           <Nav.Link>
-            <Link to="/jobs">Jobs</Link>
+            <Link to="/jobs" className="link">Jobs</Link>
           </Nav.Link>
         </Nav.Item>
 
 
         <Nav.Item>
           <Nav.Link>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile" className="link">Profile</Link>
           </Nav.Link>
         </Nav.Item>
 
 
         <Nav.Item>
           <Nav.Link>
-            <Link to="/contact" >Contact</Link>
+            <Link to="/contact" className="link">Contact</Link>
           </Nav.Link>
         </Nav.Item>
       </Nav>
