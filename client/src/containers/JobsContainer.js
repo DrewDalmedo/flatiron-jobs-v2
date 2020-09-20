@@ -7,28 +7,29 @@ import { saveJob } from '../actions/userActions'
 import JobSearchInput from '../components/Jobs/JobSearchInput'
 import Job from '../components/Jobs/Job'
 
+import Accordion from 'react-bootstrap/Accordion'
+
 class JobsContainer extends React.Component {
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.getJobs()
   }
 
   renderAllJobs = () => {
     return this.props.jobs.map( job => {
       return (
-        <li key={job.id}>
-          <Job 
-            details={job}
-            buttonText="Save Listing"
-            onButtonClick={
-              (e) => {
-                e.target.textContent = "Saved!"
-                e.target.disabled = true;
-                this.props.saveJob(job)
-              }
+        <Job 
+          details={job}
+          buttonText="Save Listing"
+          dynamicButtonVariant="success"
+          onButtonClick={
+            (e) => {
+              e.target.textContent = "Saved!"
+              e.target.disabled = true;
+              this.props.saveJob(job)
             }
-          />
-        </li>
+          }
+        />
       )
     });
   }
@@ -40,9 +41,9 @@ class JobsContainer extends React.Component {
         <JobSearchInput />
 
         <div className="jobs-container">
-          <ul>
+          <Accordion>
             { this.renderAllJobs() }
-          </ul>
+          </Accordion>
         </div>
       </div>
     )

@@ -4,25 +4,26 @@ import { connect } from 'react-redux'
 import { deleteJob } from '../actions/userActions'
 import Job from '../components/Jobs/Job'
 
+import Accordion from 'react-bootstrap/Accordion'
+
 class ProfileContainer extends React.Component {
 
   renderSavedJobs = () => {
     return this.props.jobs.map( job => {
       return (
-        <li key={job.id}>
-          <Job 
-            details={job}
-            buttonText="Delete Listing"
-            onButtonClick={
-              e => {
-                // disable the button to prevent removing it twice
-                e.target.disabled = true;
+        <Job 
+          details={job}
+          buttonText="Delete Listing"
+          dynamicButtonVariant="danger"
+          onButtonClick={
+            e => {
+              // disable the button to prevent removing it twice
+              e.target.disabled = true;
 
-                this.props.deleteJob(job.id)
-              }
+              this.props.deleteJob(job.id)
             }
-          />
-        </li>
+          }
+        />
       )
     })
   }
@@ -33,9 +34,9 @@ class ProfileContainer extends React.Component {
     }
     else {
       return (
-        <ul>
+        <Accordion>
           { this.renderSavedJobs() }
-        </ul>
+        </Accordion>
       )
     }
   }
