@@ -4,6 +4,14 @@ import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
+
+const daysSinceCreation = (createdAt) => {
+  const today = new Date( new Date().toLocaleString() )
+  const comparator = new Date(createdAt)
+
+  return Math.ceil((today - comparator) / 86400000)
+}
+
 const Job = props => {
   return (
     <Card className="text-center">
@@ -16,13 +24,14 @@ const Job = props => {
             {props.details.title}
           </Card.Title>
           <Card.Text>
-            <em>{props.details.company}</em>
+            <em>{props.details.company} - Posted {daysSinceCreation(props.details.created_at)} days ago</em>
             <br />
             <br />
             {props.details.description}
           </Card.Text>
           <Button variant="outline-primary" href={props.details.company_url} target="_blank">Learn More</Button>
           <Button variant={props.dynamicButtonVariant} onClick={props.onButtonClick}>{props.buttonText}</Button>
+          
         </Card.Body>
       </Accordion.Collapse>
       
